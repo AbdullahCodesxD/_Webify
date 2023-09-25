@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&family=Lobster&family=Roboto+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+button {
+  outline: none;
+  border: none; }
+
+a {
+  text-decoration: none; }
+
+ul,
+li {
+  list-style: none; }
+
+body {
+  background-color: #f6faff; }
+
+body::-webkit-scrollbar {
+  width: 7px;
+  background-color: #222;
+  color: red;
+  border-left: 1px solid #222; }
+
+.description > div::-webkit-scrollbar {
+  display: none; }
+
+body::-webkit-scrollbar-button {
+  display: none; }
+
+body::-webkit-scrollbar-thumb {
+  width: 7px;
+  background-color: #aaa; }
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #f4f4f4; }
+
+.container {
+  max-width: 1100px;
+  display: block;
+  margin: auto; }
+
+.editor-container {
+  max-width: fit-content;
+  display: block;
+  margin: auto; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+li {
+  font-family: "Poppins", sans-serif; }
+  h1::selection,
+  h2::selection,
+  h3::selection,
+  h4::selection,
+  h5::selection,
+  h6::selection,
+  a::selection,
+  span::selection,
+  li::selection {
+    color: #f6faff;
+    background: #222; }
+
+p {
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.6;
+  font-size: 17px;
+  color: #222; }
+  p::selection {
+    color: #f6faff;
+    background: #222; }
+
+.btn, .btn-main, .btn-dark {
+  padding: 15px 30px;
+  border: none;
+  outline: none;
+  transition: all 0.25s ease-in-out;
+  border-radius: 5px;
+  cursor: pointer; }
+  .btn:hover, .btn-main:hover, .btn-dark:hover {
+    background-color: #ffa500;
+    color: #f6faff; }
+
+.btn-main {
+  background: #3a3758;
+  color: #fff; }
+
+.btn-dark {
+  background: #222;
+  color: #f4f4f4; }
+
+.py-1 {
+  padding: 1rem; }
+.py-2 {
+  padding: 2rem; }
+
+.my-1 {
+  margin: 1rem; }
+.my-2 {
+  margin: 2rem; }
+
+.text-align {
+  text-align: center; }
+
+.line {
+  height: 2px;
+  width: 200px;
+  display: block;
+  margin: 20px auto;
+  background: #3a3758; }
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.Heading,
+.Paragraph {
+  position: relative;
+  width: fit-content;
+  padding: 50px; }
+
+.Heading:before {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  content: "<h1>";
+  font-style: italic;
+  color: #ccc;
+  font-size: 24px;
+  font-family: "Dancing Script", cursive;
+  font-weight: 100; }
+
+.Heading:after {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  content: "</h1>";
+  font-style: italic;
+  color: #ccc;
+  font-size: 24px;
+  font-family: "Dancing Script", cursive;
+  font-weight: 100; }
+
+.Paragraph:before {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  content: "<p>";
+  font-style: italic;
+  color: #ccc;
+  font-size: 24px;
+  font-family: "Dancing Script", cursive;
+  font-weight: light; }
+
+.Paragraph:after {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  content: "</p>";
+  font-style: italic;
+  color: #ccc;
+  font-size: 24px;
+  font-family: "Dancing Script", cursive;
+  font-weight: light; }
+
+div[contenteditable] {
+  outline: none;
+  caret-color: #ffa500;
+  position: relative; }
+  div[contenteditable]:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f4f4f4;
+    z-index: -1; }
+
+.logo {
+  position: relative;
+  overflow: hidden; }
+  .logo a {
+    font-size: 32px;
+    color: transparent;
+    font-family: "Irish Grover", cursive;
+    background-image: linear-gradient(45deg, #3a3758 50%, crimson 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200%;
+    background-position: 50% 50%;
+    animation: anim 3000s linear infinite;
+    transition: all 0.2s ease-in-out; }
+    .logo a:hover {
+      background-image: linear-gradient(45deg, #3a3758 50%, #ffa500 50%); }
+@keyframes anim {
+  from {
+    background-position: 0% 0%; }
+  to {
+    background-position: 55500px; } }
+body.dark .logo a {
+  opacity: 0.85;
+  background-image: linear-gradient(45deg, #f6faff 50%, #ffa500 50%); }
+  body.dark .logo a:hover {
+    background-image: linear-gradient(45deg, #f6faff 50%, royalblue 50%); }
+
+li.toggle {
+  border: 1px solid #3a3758;
+  width: 50px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 3px 5px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out; }
+  li.toggle div {
+    position: absolute;
+    left: 3px;
+    transition: all 0.25s ease-in-out;
+    height: 70%;
+    aspect-ratio: 1;
+    background-color: #3a3758;
+    border-radius: 50%; }
+
+li.toggle.dark {
+  border-color: #fff; }
+  li.toggle.dark div {
+    left: calc(75% - 5px);
+    background-color: white; }
+
+.development h2 {
+  position: fixed;
+  bottom: 0%;
+  text-transform: uppercase;
+  color: red;
+  font-size: 20px;
+  text-align: center;
+  width: 100%; }
+
+.comming {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  color: #3a3758; }
+
+#codea {
+  padding: 30px; }
+  #codea .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 85vh; }
+    #codea .container div {
+      display: flex;
+      margin-bottom: 40px;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: fit-content;
+      padding: 20px;
+      color: #f4f4f4;
+      border: 1px solid #ffa500;
+      border-radius: 5px; }
+    #codea .container h4 {
+      color: #222;
+      font-weight: lighter;
+      margin-bottom: 40px; }
+    #codea .container p {
+      opacity: 0;
+      transition: all 0.2s ease-in-out; }
+    #codea .container p.done {
+      opacity: 1; }
+
+.dark #codea h4 {
+  color: #ffa500; }
+
+#about {
+  margin-top: 150px; }
+  #about .container .about h2 {
+    font-size: 32px;
+    color: #3a3758;
+    margin: 20px 0; }
+  #about .container .about p {
+    margin: 20px 0 50px 0; }
+  #about .container .about a {
+    font-size: 16px;
+    color: #3a3758;
+    text-decoration: underline; }
+
+@media (min-width: 1100px) {
+  #about ~ footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%; } }
+@media (max-width: 1100px) {
+  .container {
+    padding: 0px 20px; } }
+
+/*# sourceMappingURL=about.css.map */

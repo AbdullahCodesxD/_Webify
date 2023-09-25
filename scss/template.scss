@@ -1,0 +1,285 @@
+@import "utilities";
+nav.hide,
+footer.hide {
+  display: none;
+}
+.desktop {
+  display: none;
+}
+#templates {
+  margin: 120px 0 50px 0;
+
+  .container {
+    h2 {
+      font-size: $section-font;
+      color: $primary;
+      span {
+        color: $second;
+      }
+    }
+    .line {
+      margin-bottom: 70px;
+    }
+    .templates {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      .template {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        height: 500px;
+        &:hover {
+          img {
+            filter: saturate(1);
+            object-position: bottom;
+          }
+          .overlay {
+            height: 50%;
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
+          filter: saturate(0.5);
+          transition: filter 500ms ease-in-out, object-position 2s ease-in-out;
+        }
+        .overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-image: linear-gradient(0deg, $primaryNav 5%, transparent);
+          transition: all 0.3s ease-in-out;
+        }
+        .btn--tiny {
+          position: absolute;
+          bottom: 40px;
+          left: 30px;
+          background-color: $dark;
+          padding: 12px;
+          cursor: pointer;
+          width: calc(100% - 60px);
+          color: $light;
+          z-index: 2;
+          transition: all 200ms ease-in-out;
+          transform: translate(0, 0);
+          &:hover {
+            transform: translate(0%, -10%);
+            opacity: 0.85;
+          }
+        }
+      }
+    }
+  }
+}
+// Editor
+#editor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(1);
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  padding: 0px 30px !important;
+  margin: 0px !important;
+  transition: all 0.3s ease-in-out;
+  .editor-container {
+    display: grid;
+    grid-template-columns: 1.3fr 4fr;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+    .editor-tools {
+      height: calc(100vh - 20px);
+      display: grid;
+      grid-template-rows: 9fr 1fr;
+      border-radius: 5px;
+      background-color: $dark;
+      position: sticky;
+      top: 0;
+      left: 0;
+      margin: 10px 0;
+      .main-tools {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        height: 100%;
+        .tools {
+          border-radius: 5px 0 0 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          flex-direction: column;
+          .current {
+            background-color: $second !important;
+            color: $dark !important;
+          }
+          .tool {
+            // background-color: green;
+            height: 100%;
+            padding: 0px 5px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            transition: all 200ms ease-in-out;
+            border-bottom: 2px solid transparent;
+            border-left: 2px solid transparent;
+            background-color: $primary !important;
+            color: $light !important;
+            min-width: 75px;
+            &:nth-child(1) {
+              border-radius: inherit;
+            }
+            &:hover {
+              border-color: $second;
+              background-color: $light;
+              color: #111;
+              .btn {
+                border-color: #111;
+                color: #111;
+              }
+            }
+
+            h3 {
+              font-size: 10px;
+              opacity: 0.95;
+              color: inherit !important;
+            }
+            i {
+              font-size: 16px;
+              margin-bottom: 3px;
+              opacity: 0.95;
+            }
+            .btn {
+              background-color: transparent;
+              border: 2px solid color !important;
+              padding: 10px;
+            }
+            .others {
+              position: relative;
+              &:after,
+              &:before {
+                position: absolute;
+                content: ".";
+                height: 100%;
+                width: 100%;
+                border: 100%;
+                top: 0;
+                left: 0;
+                color: inherit;
+              }
+              &:after {
+                left: 7px;
+              }
+              &:before {
+                left: -7px;
+              }
+            }
+          }
+        }
+      }
+
+      .buttons {
+        border-top: 2px solid #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0px 20px;
+        width: 100%;
+        .btn--main {
+          padding: 12px 20px !important;
+          width: 50% !important;
+          font-size: 12px !important;
+        }
+      }
+    }
+    .main-editor {
+      margin: 10px 0;
+      height: calc(100vh - 20px);
+      border: 2px solid $primary;
+      border-radius: 5px;
+      overflow-y: scroll;
+      .cross {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        left: calc(100% - 50px);
+        height: 36px;
+        width: 36px;
+        border: 2px solid $primary;
+        border-radius: 5px;
+        z-index: 1000;
+        background: transparent;
+        cursor: pointer;
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 70%;
+          height: 2px;
+          background-color: $dark;
+        }
+        &:before {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &:after {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+// SAVED
+#saved {
+  opacity: 0;
+}
+.saved {
+  display: block;
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(50%);
+  z-index: 5000;
+  font-size: 18px;
+  color: $primary;
+  text-decoration: underline;
+  animation: save 1.5s forwards linear;
+}
+@keyframes save {
+  0% {
+    opacity: 0;
+    bottom: -20px;
+  }
+  50% {
+    opacity: 1;
+    bottom: 3%;
+  }
+  70% {
+    opacity: 1;
+    bottom: 3%;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    bottom: -20px;
+  }
+}
+#editor.hide,
+#templates.hide {
+  transform: scale(0);
+  display: none;
+}

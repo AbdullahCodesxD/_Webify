@@ -1,0 +1,87 @@
+@media (max-width: 800px) {
+  nav {
+    margin-top: 40px; }
+    nav .logo {
+      overflow: initial; }
+    nav .container {
+      flex-direction: column; }
+      nav .container ul {
+        position: relative; }
+      nav .container .toggle {
+        position: absolute;
+        bottom: -10px; }
+
+  #home {
+    height: fit-content;
+    margin-top: 230px;
+    margin-bottom: 200px; }
+    #home .container {
+      height: 100%; }
+    #home .grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      #home .grid .right {
+        display: none; }
+
+  #about {
+    margin-top: 200px; }
+
+  .we__offer .container .grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0; }
+    .we__offer .container .grid .grid-item {
+      width: 100%;
+      min-height: 200px; }
+    .we__offer .container .grid .background,
+    .we__offer .container .grid .images,
+    .we__offer .container .grid .font-size {
+      height: 350px; }
+      .we__offer .container .grid .background .back,
+      .we__offer .container .grid .images .back,
+      .we__offer .container .grid .font-size .back {
+        height: 60%; }
+
+  #testimonials {
+    padding: 0px 40px; }
+    #testimonials .container .testimonials {
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-content: center; }
+
+  #check .container {
+    flex-direction: column; }
+    #check .container h2,
+    #check .container a {
+      font-size: 22px; }
+
+  #templates {
+    display: none; }
+
+  .desktop {
+    display: block !important;
+    color: #222;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 700px;
+    text-align: center; }
+
+  .dark .desktop {
+    color: #ffa500; }
+
+  .temp-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%; } }
+@media (max-height: 700px) {
+  #home {
+    margin-bottom: 100px;
+    height: fit-content; } }
+
+/*# sourceMappingURL=mobile.css.map */

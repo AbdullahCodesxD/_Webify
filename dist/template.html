@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/9ea2f87203.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./js/dark.js"></script>
+
+    <script defer type="module" src="./js/controller.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Sicktweb | Templates</title>
+  </head>
+  <body>
+    <!-- Nav bar -->
+    <nav>
+      <div class="container">
+        <div class="logo">
+          <a href="./index.html">< Build /></a>
+        </div>
+        <ul class="nav__links flex">
+          <li class="link flex">
+            <a class="flex" href="./index.html">Home</a>
+          </li>
+          <li class="link flex">
+            <a class="flex" href="./template.html">Templates</a>
+          </li>
+
+          <li class="link flex">
+            <a class="flex" href="./about.html">About</a>
+          </li>
+          <li class="toggle">
+            <div></div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Section : templates -->
+
+    <section id="templates">
+      <div class="container">
+        <!-- Heading -->
+
+        <h2 class="text-align">Free <span>Available Templates.</span></h2>
+        <div class="line"></div>
+
+        <!-- Templates -->
+
+        <div class="templates">
+          <div class="template" data-template="1">
+            <img
+              src="./img/template-images/template1.png"
+              alt="template Image"
+              loading="lazy"
+            />
+            <button class="btn--tiny">Edit.</button>
+            <div class="overlay"></div>
+          </div>
+          <div class="template" data-template="2">
+            <img
+              src="./img/template-images/template2.png"
+              alt="template Image"
+              loading="lazy"
+            />
+            <button class="btn--tiny">Edit.</button>
+            <div class="overlay"></div>
+          </div>
+          <div class="template" data-template="3">
+            <img
+              src="./img/template-images/template3.png"
+              alt="template Image"
+              loading="lazy"
+            />
+            <button class="btn--tiny">Edit.</button>
+            <div class="overlay"></div>
+          </div>
+          <div class="template" data-template="4">
+            <img
+              src="./img/template-images/template4.png"
+              alt="template Image"
+              loading="lazy"
+            />
+            <button class="btn--tiny">Edit.</button>
+            <div class="overlay"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="desktop">
+      <h1>We Recommend viewing the desktop version of this page!</h1>
+    </div>
+    <!-- Section : editor -->
+    <section id="editor" class="hide">
+      <div class="editor-container">
+        <!-- Editor tools / Left -->
+        <aside class="editor-tools">
+          <!-- main Tools -->
+          <div class="main-tools">
+            <!-- Tool left bar -->
+            <aside class="tools">
+              <!-- Heading -->
+              <div class="tool" id="head">
+                <i class="fas fa-heading"></i>
+                <h3 class="tool-heading">Headings.</h3>
+              </div>
+              <!-- Paragraph -->
+              <div class="tool" id="para">
+                <i class="fas fa-paragraph"></i>
+                <h3 class="tool-heading">Para.</h3>
+              </div>
+              <!-- Images -->
+              <div class="tool" id="img">
+                <i class="fas fa-image"></i>
+                <h3 class="tool-heading">Images.</h3>
+              </div>
+              <!-- Colors -->
+              <div class="tool" id="colour">
+                <i class="fas fa-palette"></i>
+                <h3 class="tool-heading">Colors.</h3>
+              </div>
+            </aside>
+
+            <!-- Description -->
+            <aside class="description"></aside>
+          </div>
+
+          <!-- Buttons -->
+          <div class="buttons">
+            <button class="btn-main" id="btn-save">Save.</button>
+            <a download href="#"
+              ><button class="btn-main" id="btn-code">Get Code.</button></a
+            >
+          </div>
+        </aside>
+        <!-- Main Editor / Right -->
+        <aside class="main-editor">
+          <!-- Cross btn -->
+          <button class="cross"></button>
+          <!-- Main Editor -->
+          <div
+            id="code"
+            contenteditable="true"
+            style="position: relative"
+          ></div>
+          <div>
+            <style id="css"></style>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <!-- Section : Saved Successfully -->
+    <p id="saved">Saved Successfully</p>
+    <!-- Footer -->
+    <footer class="temp-footer">
+      <div class="container">
+        <p class="lead">
+          All copyright reserved &copy; 2023 by <span>AbdullahCodesxD</span>.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

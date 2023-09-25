@@ -1,0 +1,359 @@
+// $primary: #8c92ac;
+// $primary: #4f4d7d;
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&family=Lobster&family=Roboto+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap");
+// Colors
+$primary: #3a3758;
+$second: #ffa500;
+$white: #fff;
+$card: #f4f4f4;
+$medium: #f4f4f4;
+$light: #f6faff;
+$dark: #222;
+$pseudo: #ccc;
+$primaryNav: rgba(58, 55, 88, 0.85);
+
+$gradient: 360deg, $primary 50%, transparent;
+// Fonts
+$main-font: "Poppins", sans-serif;
+$primary-font: "Roboto Condensed", sans-serif;
+$pseudo-font: "Dancing Script", cursive;
+$logo-font: "Irish Grover", cursive;
+// Utilities
+$navHeight: 72px; // Removing Default styles;
+$section-font: 30px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+button {
+  outline: none;
+  border: none;
+}
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+body {
+  background-color: $light;
+}
+body::-webkit-scrollbar {
+  width: 7px;
+  background-color: $dark;
+  color: red;
+  border-left: 1px solid $dark;
+}
+.description > div::-webkit-scrollbar {
+  display: none;
+}
+body::-webkit-scrollbar-button {
+  display: none;
+}
+body::-webkit-scrollbar-thumb {
+  width: 7px;
+  background-color: #aaa;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: $medium;
+}
+// Container
+.container {
+  max-width: 1100px;
+  display: block;
+  margin: auto;
+}
+.editor-container {
+  max-width: fit-content;
+  display: block;
+  margin: auto;
+}
+// Font styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+li {
+  font-family: $main-font;
+  &::selection {
+    color: $light;
+    background: $dark;
+  }
+}
+p {
+  font-family: $primary-font;
+  line-height: 1.6;
+  font-size: 17px;
+  color: $dark;
+  &::selection {
+    color: $light;
+    background: $dark;
+  }
+}
+// Buttons
+.btn {
+  padding: 15px 30px;
+  border: none;
+  outline: none;
+  transition: all 0.25s ease-in-out;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: $second;
+    color: $light;
+  }
+}
+.btn-main {
+  @extend .btn;
+  background: $primary;
+  color: $white;
+}
+.btn-dark {
+  @extend .btn;
+  background: $dark;
+  color: $medium;
+}
+// padding
+.py- {
+  &1 {
+    padding: 1rem;
+  }
+  &2 {
+    padding: 2rem;
+  }
+}
+// Margin;
+.my- {
+  &1 {
+    margin: 1rem;
+  }
+  &2 {
+    margin: 2rem;
+  }
+}
+// Utilities
+.text-align {
+  text-align: center;
+}
+.line {
+  height: 2px;
+  width: 200px;
+  display: block;
+  margin: 20px auto;
+  background: $primary;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Heading,
+.Paragraph {
+  position: relative;
+  width: fit-content;
+  padding: 50px;
+}
+.Heading:before {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  content: "<h1>";
+  font-style: italic;
+  color: $pseudo;
+  font-size: 24px;
+  font-family: $pseudo-font;
+  font-weight: 100;
+  // z-index: -1;
+}
+.Heading:after {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  content: "</h1>";
+  font-style: italic;
+  color: $pseudo;
+  font-size: 24px;
+  font-family: $pseudo-font;
+  font-weight: 100;
+  // z-index: -1;
+}
+.Paragraph:before {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  content: "<p>";
+  font-style: italic;
+  color: $pseudo;
+  font-size: 24px;
+  font-family: $pseudo-font;
+  // z-index: -1;
+  font-weight: light;
+}
+.Paragraph:after {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  content: "</p>";
+  font-style: italic;
+  color: $pseudo;
+  font-size: 24px;
+  font-family: $pseudo-font;
+  // z-index: -1;
+  font-weight: light;
+}
+
+div[contenteditable] {
+  outline: none;
+  caret-color: $second;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f4f4f4;
+    z-index: -1;
+  }
+}
+
+.logo {
+  position: relative;
+  overflow: hidden;
+  a {
+    font-size: 32px;
+    color: transparent;
+    font-family: $logo-font;
+    background-image: linear-gradient(45deg, $primary 50%, crimson 50%);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200%;
+    background-position: 50% 50%;
+    animation: anim 3000s linear infinite;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-image: linear-gradient(45deg, $primary 50%, $second 50%);
+    }
+  }
+  @keyframes anim {
+    from {
+      background-position: 0% 0%;
+    }
+    to {
+      background-position: 55500px;
+    }
+  }
+}
+body.dark .logo {
+  a {
+    opacity: 0.85;
+    background-image: linear-gradient(45deg, $light 50%, $second 50%);
+    &:hover {
+      background-image: linear-gradient(45deg, $light 50%, royalblue 50%);
+    }
+  }
+}
+li.toggle {
+  // background-color: red;
+  border: 1px solid $primary;
+  width: 50px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 3px 5px;
+  position: relative;
+  cursor: pointer;
+  // justify-content: center;
+  transition: all 0.25s ease-in-out;
+  div {
+    position: absolute;
+    left: 3px;
+    transition: all 0.25s ease-in-out;
+    height: 70%;
+    aspect-ratio: 1;
+    background-color: $primary;
+    border-radius: 50%;
+  }
+}
+li.toggle.dark {
+  border-color: #fff;
+  div {
+    left: calc(75% - 5px);
+    background-color: white;
+  }
+}
+// DEvelopment
+.development {
+  h2 {
+    // display:none
+    position: fixed;
+    bottom: 0%;
+    text-transform: uppercase;
+    color: red;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+}
+.comming {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  color: $primary;
+}
+
+#codea {
+  padding: 30px;
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 85vh;
+    div {
+      display: flex;
+      margin-bottom: 40px;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: fit-content;
+      padding: 20px;
+      color: #f4f4f4;
+      border: 1px solid $second;
+      border-radius: 5px;
+    }
+    h4 {
+      color: #222;
+      font-weight: lighter;
+      margin-bottom: 40px;
+    }
+    p {
+      opacity: 0;
+      transition: all 0.2s ease-in-out;
+    }
+    p.done {
+      opacity: 1;
+    }
+  }
+}
+.dark {
+  #codea {
+    h4 {
+      color: $second;
+    }
+  }
+}

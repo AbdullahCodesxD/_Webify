@@ -1,0 +1,33 @@
+@import "utilities";
+#about {
+  margin-top: 150px;
+  .container {
+    .about {
+      h2 {
+        font-size: 32px;
+        color: $primary;
+        margin: 20px 0;
+      }
+      p {
+        margin: 20px 0 50px 0;
+      }
+      a {
+        font-size: 16px;
+        color: $primary;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+@media (min-width: 1100px) {
+  #about ~ footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 1100px) {
+  .container {
+    padding: 0px 20px;
+  }
+}
